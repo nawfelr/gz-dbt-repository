@@ -50,4 +50,119 @@ sources:
             description: ship_cost of each order
 
 
+# ********************************************* PARTIE MARKETING **************************************************
+
+      - name: bing
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+        identifier: raw_gz_bing
+        description: bing campagn of Greenweez 
+        columns:
+          - name: date_date
+            description: date of each campaign
+
+          - name: paid_source
+            description: paid_source
+
+          - name: campaign_key
+            description: campaign_key
+
+          - name: camPGN_name
+            description: camPGN_name
+
+          - name: ads_cost
+            description: cost of each campaign
+
+          - name: impression
+            description: nb of impressions
+
+          - name: click
+            description: nb of clicks
+
+
+      - name: adwords
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+        identifier: raw_gz_adwords
+        description: bing campagn of Greenweez
+        columns:
+          - name: date_date
+            description: date of each campaign
+          
+          - name: paid_source
+            description: paid_source
+
+          - name: campaign_key
+            description: campaign_key
+
+          - name: camPGN_name
+            description: camPGN_name
+
+          - name: ads_cost
+            description: cost of each campaign
+
+          - name: impression
+            description: nb of impressions
+
+          - name: click
+            description: nb of clicks
+
+      - name: criteo
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+        identifier: raw_gz_criteo
+        description: bing campagn of Greenweez 
+        columns:
+          - name: date_date
+            description: date of each campaign
+            
+          - name: paid_source
+            description: paid_source
+
+          - name: campaign_key
+            description: campaign_key
+
+          - name: camPGN_name
+            description: camPGN_name
+
+          - name: ads_cost
+            description: cost of each campaign
+
+          - name: impression
+            description: nb of impressions
+
+          - name: click
+            description: nb of clicks
+
+      - name: facebook
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+        identifier: raw_gz_facebook
+        description: bing campagn of Greenweez 
+        columns:
+          - name: date_date
+            description: date of each campaign
+
+          - name: paid_source
+            description: paid_source
+
+          - name: campaign_key
+            description: campaign_key
+
+          - name: camPGN_name
+            description: camPGN_name
+
+          - name: ads_cost
+            description: cost of each campaign
+
+          - name: impression
+            description: nb of impressions
+            
+          - name: click
+            description: nb of clicks
+
 
