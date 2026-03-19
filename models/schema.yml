@@ -1,0 +1,53 @@
+version: 2
+
+sources:
+  - name: gz_raw 
+    database: my-dbt-project-490610 
+    schema: gz_raw_data
+    tables:
+      - name: sales
+        tests:
+          - unique:
+              column_name: "(orders_id || '_' || pdt_id)"
+        identifier: raw_gz_sales
+        description: sales of Greenweez / we have one row per product_id found in each orders_id
+        columns:
+          - name: date_date
+            description: date of the order
+          - name: orders_id
+            description: id of the order
+          - name: products_id
+            description: id of each product in our order 
+          - name: revenue
+            description: cost of each product in our order
+          - name: quantity
+            description: quantity of each product in our order
+           
+        
+      - name: product
+        identifier: raw_gz_product
+        description: product of Greenweez / we have one row per product_id and its purchase_price
+        columns:
+          - name: products_id
+            description: id of each product
+            tests:
+              - unique
+          - name: purchase_price
+            description: price of each product
+      - name: ship
+        identifier: raw_gz_ship
+        description: ship of Greenweez / we have one row per orders_id, its log_cost, shipping_fee and ship_cost
+        columns:
+          - name: orders_id
+            description: id of each order
+            tests:
+              - unique
+          - name: shipping_fee
+            description: shipping_fee of each order
+          - name: logcost
+            description: logcost of each order
+          - name: ship_cost
+            description: ship_cost of each order
+
+
+
