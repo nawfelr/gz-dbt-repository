@@ -4,6 +4,7 @@ orders_id
 ,  ROUND(margin + shipping_fee - ship.logcost - ship.ship_cost,2) AS Operational_margin
 , quantity
 , purchase_cost
+, revenue
 , margin
 , ship.shipping_fee
 , ship.logcost
